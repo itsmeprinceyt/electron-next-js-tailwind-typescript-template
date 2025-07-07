@@ -5,13 +5,15 @@
   "main": "electron/dist/main.js",
   "scripts": {
     "dev": "next dev",
-    "build:next": "next build && next export",
+    "build:next": "next build",
+    "move:out": "node move-out.js",
     "build:electron": "tsc -p electron/tsconfig.electron.json",
     "dev:electron": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron electron/dist/main.js\"",
-    "build:app": "npm run build:next && npm run build:electron && electron-builder"
+    "build:app": "npm run build:next && npm run move:out && npm run build:electron && electron-builder"
   },
   "build": {
-    "appId": "com.example.myapp",
+    "appId": "com.yourcompany.yourapp",
+    "productName": "productName",
     "files": [
       "electron/dist/**/*",
       "out/**/*",
@@ -21,11 +23,14 @@
       "buildResources": "assets"
     },
     "win": {
-      "target": "nsis"
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
     }
   },
   "dependencies": {
-    "electron": "^29.0.0",
     "next": "^15.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -36,7 +41,9 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
+    "electron": "^29.0.0",
     "electron-builder": "^24.6.3",
+    "fs-extra": "^11.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.4.5",
@@ -44,13 +51,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template/issues"
-  },
-  "homepage": "https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template#readme"
+  "license": "ISC"
 }

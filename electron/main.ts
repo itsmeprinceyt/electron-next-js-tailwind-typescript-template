@@ -11,10 +11,14 @@ function createWindow() {
     });
 
     const startUrl = app.isPackaged
-        ? `file://${path.join(__dirname, '../out/index.html')}`
-        : 'http://localhost:3000';
+        ? path.join(__dirname, "out", "index.html")
+        : "http://localhost:3000";
 
-    win.loadURL(startUrl);
+    if (app.isPackaged) {
+        win.loadFile(startUrl);
+    } else {
+        win.loadURL(startUrl);
+    }
 }
 
 app.whenReady().then(createWindow);
