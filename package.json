@@ -1,4 +1,7 @@
 {
+  "name": "electron-next-tailwind-template",
+  "version": "1.0.0",
+  "description": "A modern template combining Electron with Next.js (App Router), styled using TailwindCSS and built with TypeScript. Ideal for creating cross-platform desktop applications using web technologies.",
   "main": "electron/dist/main.js",
   "scripts": {
     "dev": "next dev",
@@ -20,5 +23,34 @@
     "win": {
       "target": "nsis"
     }
-  }
+  },
+  "dependencies": {
+    "electron": "^29.0.0",
+    "next": "^15.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/react": "19.1.8",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^24.6.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.4.5",
+    "wait-on": "^7.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template/issues"
+  },
+  "homepage": "https://github.com/itsmeprinceyt/electron-next-js-tailwind-typescript-template#readme"
 }
