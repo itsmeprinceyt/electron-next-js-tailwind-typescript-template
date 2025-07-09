@@ -5,7 +5,7 @@ const src = path.join(__dirname, "out");
 const dest = path.join(__dirname, "electron", "dist", "out");
 
 (async () => {
-    console.log("📦 Moving 'out' folder... in 2 seconds");
+    console.log("📦 Moving 'out' folder...");
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     if (!fs.existsSync(src)) {

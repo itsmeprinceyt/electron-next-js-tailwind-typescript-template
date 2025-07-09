@@ -25,24 +25,31 @@ This template includes:
 
 ```json
   "build": {
-    "appId": "com.yourcompany.yourapp",
-    "productName": "productName",
+    "appId": "com.company.appid",
+    "productName": "Proper Software name without any unallowed characters", // dont add stuff like "/" , "|" , "$" [all the unallowed characters should not be used here or in any product name variable]
     "files": [
       "electron/dist/**/*",
       "out/**/*",
       "package.json"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "electron/assets" // it finds all the license and stuff from here
     },
     "win": {
       "target": [
         "portable",
         "nsis"
       ],
-      "icon": "assets/icon.ico"
+      "icon": "electron/assets/logo.ico" // icon where it is situated in the context oc package.json
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Proper Software name without any unallowed characters"
     }
-  },
+  }
 ```
 
 ## 📁 Output

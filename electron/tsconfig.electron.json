@@ -6,10 +6,20 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "outDir": "./dist",
-        "rootDir": "./"
+        "rootDir": "./",
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "types": [
+            "node",
+            "electron"
+        ]
     },
     "include": [
         "./main.ts",
-        "./preload.ts"
+        "./preload.ts",
+        "./types/**/*.ts",
+        "./assets/*"
     ]
 }
